@@ -17,9 +17,9 @@
 
                 <div class="card-body">
                     @if(isset($students_edit))
-                    {{ Form::open(array('route' => ['update',$students_edit->id],'files'=>true)) }}	
+                    {{ Form::open(array('route' => ['update',$students_edit->id],'files'=>true,'class'=>'GlobalFormValidation')) }}	
                     @endif
-                    <form method="POST" action="{{ route('student_register') }}" aria-label="{{ __('Student Register') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('student_register') }}" aria-label="{{ __('Student Register') }}" enctype="multipart/form-data" class="GlobalFormValidation">
                         @csrf
 
                         <div class="form-group row">
@@ -68,7 +68,7 @@
                             <label for="dob" class="col-md-4 col-form-label text-md-right">{{ __('Date Of Birth') }}<span style="color: red">*</span></label>
 
                             <div class="col-md-6">
-                                <input id="last_name" type="date" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{@$students_edit->dob}}">
+                                <input id="dob" type="date" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{@$students_edit->dob}}">
 
                                 @if ($errors->has('dob'))
                                 <span class="invalid-feedback" role="alert">
@@ -137,4 +137,27 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="Modal_Edits" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+@section('script')
+<script src="{{ asset('js/globalAjax.js') }}"></script>
 @endsection

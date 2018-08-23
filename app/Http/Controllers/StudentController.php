@@ -39,7 +39,11 @@ class StudentController extends Controller {
             's_roll_no' => $student->roll_no
         ]);
 
-        return redirect('/students_list');
+        return response()->json([
+                    'status' => 'success',
+                    'message' => 'Successfully Created',
+                    
+        ]);
     }
 
     public function students_list() {
@@ -118,7 +122,11 @@ class StudentController extends Controller {
         $student_update->image = $all['image'];
         $student_update->save();
 
-        return redirect('/students_list');
+        return response()->json([
+                    'status' => 'success',
+                    'message' => 'Successfully Updated',
+                    
+        ]);
     }
 
     /**

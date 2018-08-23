@@ -123,6 +123,7 @@
             </main>
         </div>
         <script src="{{ asset('js/jquery.js') }}"></script>
+        
         @yield('script')
     </body>
 </html>

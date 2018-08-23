@@ -40,7 +40,11 @@ class MarksController extends Controller
      
         $all = $request->all();
         Marks::create($all);
-        return redirect('/marks');
+        return response()->json([
+                    'status' => 'success',
+                    'message' => 'Successfully Created',
+                    
+        ]);
     }
     /**
      * Display the specified resource.

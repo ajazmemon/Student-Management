@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container">
-                    <form method="POST" action="{{ route('store_data') }}">
-                        @csrf
+    <form method="POST" action="{{ route('store_data') }}" class="GlobalFormValidation">
+    @csrf
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-6">
@@ -105,8 +105,30 @@
     </div>
 </div>
 </div>
+
+<div class="modal fade" id="Modal_Edits" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 @section('script')
+<script src="{{ asset('js/globalAjax.js') }}"></script>
+
 <script type="text/javascript">
     $(document).ready(function() {
 
