@@ -7,7 +7,7 @@ $(document).ready(function() {
         
         var roll = $('#roll_no').val();
         var fnm = $('#first_name').val();
-        var lnm = $('#lsst_name').val();
+        var lnm = $('#last_name').val();
         var dob = $('#dob').val();
         
         var maths = $('#maths').val();
